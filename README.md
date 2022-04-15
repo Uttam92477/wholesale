@@ -18,9 +18,13 @@ The API is **GET /accounts/{accountNumber}/transactions**. Data is seeded during
 **Transactions for a given account with page options** - https://anzwholesale.learnerdev.com/accounts/a1/transactions?pageNo=1&pageSize=2
 **Transactions for a given account with transactionType** - https://anzwholesale.learnerdev.com/accounts/a1/transactions?transactionType=Credit
 
+
 #### How to run the application
-1. Create the application JAR file using `./mvnw package`
-2. Run the application `java -jar target/wholesale-engineering-demo-0.0.1-SNAPSHOT.jar`
+1. Ensure Java is present in the machine
+2. Download/clone this repository
+3. Create the application JAR file using `./mvnw package`
+4. Run the application `java -jar target/wholesale-engineering-demo-0.0.1-SNAPSHOT.jar`
+5. All the endpoints mentioned above will now be available with address `http://localhost:8080`
 
 ## Deployment steps
 1. `aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin 457259096235.dkr.ecr.ap-southeast-2.amazonaws.com`
