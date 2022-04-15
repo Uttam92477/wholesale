@@ -1,6 +1,7 @@
 package com.anz.career.wholesale.transaction;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
@@ -31,7 +32,7 @@ public class Transaction implements Serializable {
   @ManyToOne
   @JoinColumn(name = "ACCOUNT_NUMBER")
   private Account account;
-  private String valueDate;
+  private Date valueDate;
   private String currency;
   private Double debitAmount;
   private Double creditAmount;
