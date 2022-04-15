@@ -7,15 +7,15 @@ Swagger UI - https://anzwholesale.learnerdev.com/swagger-ui/#/
 Swagger JSON specification - https://anzwholesale.learnerdev.com/v2/api-docs
 
 #### Application endpoints
-**Accounts that belong to a user** - https://anzwholesale.learnerdev.com/users/1/accounts
+**Accounts that belong to a user** - https://anzwholesale.learnerdev.com/users/1/accounts  
 The API is **GET /users/{id}/accounts**. Data is seeded during application startup for user with ID *1*.
 
 **Accounts that belong to a user with page options** - https://anzwholesale.learnerdev.com/users/1/accounts?pageNo=1&pageSize=2
 
-**Transactions for a given account** - https://anzwholesale.learnerdev.com/accounts/a1/transactions
+**Transactions for a given account** - https://anzwholesale.learnerdev.com/accounts/a1/transactions  
 The API is **GET /accounts/{accountNumber}/transactions**. Data is seeded during application startup for account number *a1*.
 
-**Transactions for a given account with page options** - https://anzwholesale.learnerdev.com/accounts/a1/transactions?pageNo=1&pageSize=2
+**Transactions for a given account with page options** - https://anzwholesale.learnerdev.com/accounts/a1/transactions?pageNo=1&pageSize=2  
 **Transactions for a given account with transactionType** - https://anzwholesale.learnerdev.com/accounts/a1/transactions?transactionType=Credit
 
 #### How to run the application
