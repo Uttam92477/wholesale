@@ -1,3 +1,5 @@
+![Presentation slide](md-resources/presentation.png?raw=true "")
+
 ## Assumptions
 
 Swagger UI available at http://localhost:8080/swagger-ui/#/
