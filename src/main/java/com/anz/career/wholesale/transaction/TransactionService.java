@@ -14,7 +14,7 @@ public class TransactionService {
   @Autowired
   private TransactionRepository transactionRepository;
 
-  @Cacheable
+  @Cacheable("transactions")
   public Collection<TransactionSummary> findTransactionsByAccountNumber(String accountNumber, int pageNo,
       int pageSize) {
     return transactionRepository.findByAccountAccountNumber(accountNumber, PageRequest.of(pageNo, pageSize),
@@ -22,7 +22,7 @@ public class TransactionService {
 
   }
 
-  @Cacheable
+  @Cacheable("transactions")
   public Collection<TransactionSummary> findTransactionsByAccountNumberAndTransactionType(String accountNumber,
       String transactionType, int pageNo,
       int pageSize) {
