@@ -30,3 +30,11 @@ The application is implemented using latest spring boot frameworks and component
 4. `docker tag wholesale-engineering-demo:latest 457259096235.dkr.ecr.ap-southeast-2.amazonaws.com/wholesale-engineering-demo:latest`
 5. `docker push 457259096235.dkr.ecr.ap-southeast-2.amazonaws.com/wholesale-engineering-demo:latest`
 6. `aws ecs update-service --cluster anz-wholesale-demo --service backend --force-new-deployment`
+
+TODO
+1. Check github link is updated in ppt
+   1. If change in ppt update screenshot
+2. Check all links in ppt and in readme.md
+3. Remove account number if keeping aws deployment steps in readme file
+4.
+
