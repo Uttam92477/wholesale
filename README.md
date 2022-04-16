@@ -1,7 +1,19 @@
 ![Presentation slide](md-resources/presentation.png?raw=true "")
 
-## Documentation
-The application is deployed in AWS and available to consume via below direct links,
+# ANZ Wholesale Engineering - Sample Project  
+The application provides the backend layer to support UI functionality to display accounts that belong to a user and to display transactions made for a specific account.  
+The application is implemented using latest spring boot frameworks and components. The application is deployed into AWS cloud infrastructure and the endpoints are available to be consumed directly using the links mentioned further in this document.  
+
+
+|Description           |Direct endpoint                                                 |Localhost endpoint                                                           |
+|----------------------|----------------------------------------------------------------|-----------------------------------------------------------------------------|
+|User accounts         |https://anzwholesale.learnerdev.com/users/1/accounts            |http://localhost:8080/users/1/accounts                                       |
+|Account transactions  |https://anzwholesale.learnerdev.com/accounts/a1/transactions    |http://localhost:8080/accounts/a1/transactions                               |
+|Dashes                |`-- is en-dash, --- is em-dash`                                 |-- is en-dash, --- is em-dash                                                |
+|Dashes                |`-- is en-dash, --- is em-dash`                                 |-- is en-dash, --- is em-dash                                                |
+
+
+
 #### Swagger
 Swagger UI - https://anzwholesale.learnerdev.com/swagger-ui/#/
 Swagger JSON specification - https://anzwholesale.learnerdev.com/v2/api-docs
