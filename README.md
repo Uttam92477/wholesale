@@ -36,5 +36,5 @@ TODO
    1. If change in ppt update screenshot
 2. Check all links in ppt and in readme.md
 3. Remove account number if keeping aws deployment steps in readme file
-4.
+4. Check global TODOs for any missing things
 
