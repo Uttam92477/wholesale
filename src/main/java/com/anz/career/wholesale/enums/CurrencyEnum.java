@@ -2,6 +2,11 @@ package com.anz.career.wholesale.enums;
 
 import java.util.stream.Stream;
 
+/**
+ * Although currency is stored as an ENUM here, the more appropriate way would
+ * be store currency as DB table with exchange rates and so on and with multiple
+ * other currencies as well
+ */
 public enum CurrencyEnum {
   SGD("SGD"), AUD("AUD");
 

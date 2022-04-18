@@ -21,6 +21,14 @@ public class TransactionService {
 
   }
 
+  /**
+   * Obtains transactions based on both account number and transaction type.
+   * 
+   * @param accountNumber
+   * @param transactionType
+   * @param pageable
+   * @return
+   */
   @Cacheable("transactions")
   public Collection<TransactionSummary> findTransactionsByAccountNumberAndTransactionType(String accountNumber,
       String transactionType, Pageable pageable) {

@@ -2,6 +2,10 @@ package com.anz.career.wholesale.projection;
 
 import java.util.Date;
 
+/**
+ * Interface based projections are used so that only the attributes required are
+ * returned and not all columns from the DB
+ */
 public interface AccountSummary {
   String getAccountNumber();
 
