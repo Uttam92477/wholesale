@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -71,7 +72,7 @@ public class AccountControllerTest {
     };
     Collection<AccountSummary> accounts = new ArrayList<>();
     accounts.add(account1);
-    when(accountService.findAccountsByUserId("1", 0, 3)).thenReturn(accounts);
+    when(accountService.findAccountsByUserId("1", PageRequest.of(0, 20))).thenReturn(accounts);
     mockMvc.perform(get("/users/1/accounts").contentType(MediaType.APPLICATION_JSON))
         .andDo(print())
         .andExpect(status().isOk())

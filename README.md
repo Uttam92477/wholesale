@@ -1,8 +1,8 @@
 ![Presentation slide](md-resources/presentation.png?raw=true "")
 
-# ANZ Wholesale Engineering - Sample Project  
-The application provides the backend layer to support UI functionality to display accounts that belong to a user and to display transactions made for a specific account.  
-The application is implemented using latest spring boot frameworks and components. The application is deployed into AWS cloud infrastructure and the endpoints are available to be consumed directly using the links mentioned further in this document. This spring boot application can also be started locally. 
+# ANZ Wholesale Engineering - Sample Project
+The application provides the backend layer to support UI functionality to display accounts that belong to a user and to display transactions made for a specific account.
+The application is implemented using latest spring boot frameworks and components. The application is deployed into AWS cloud infrastructure and the endpoints are available to be consumed directly using the links mentioned further in this document. This spring boot application can also be started locally.
 
 ## How to run the application locally
 1. Ensure Java is present in the machine. For development OpenJDK 11 is used
@@ -13,28 +13,24 @@ The application is implemented using latest spring boot frameworks and component
 
 ## Accessing the application endpoints
 
-|Description           |Direct endpoint                                                 |Localhost endpoint                                                           |
-|----------------------|----------------------------------------------------------------|-----------------------------------------------------------------------------|
-|User accounts         |https://anzwholesale.learnerdev.com/users/1/accounts            |http://localhost:8080/users/1/accounts                                       |
-|Account transactions  |https://anzwholesale.learnerdev.com/accounts/a1/transactions    |http://localhost:8080/accounts/a1/transactions                               |
-|Swagger UI            |https://anzwholesale.learnerdev.com/swagger-ui/#/               |http://localhost:8080/swagger-ui/#/                                          |
-|Swagger JSON spec     |https://anzwholesale.learnerdev.com/v2/api-docs                 |http://localhost:8080/v2/api-docs                                            |
-|Accounts with page options    |https://anzwholesale.learnerdev.com/users/1/accounts?pageNo=1&pageSize=2                 |http://localhost:8080/v2/api-docs?pageNo=1&pageSize=2                                            |
-|Transactions with page options     |https://anzwholesale.learnerdev.com/accounts/a1/transactions?pageNo=1&pageSize=5                 |http://localhost:8080/a1/transactions?pageNo=1&pageSize=5                                            |
-|Transaction type filter     |https://anzwholesale.learnerdev.com/accounts/a1/transactions?transactionType=Credit                |http://localhost:8080?transactionType=Credit                                            |  
+| Description                    | Direct endpoint                                                                     | Localhost endpoint                                                    |
+| ------------------------------ | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| User accounts                  | https://anzwholesale.learnerdev.com/users/1/accounts                                | http://localhost:8080/users/1/accounts                                |
+| Account transactions           | https://anzwholesale.learnerdev.com/accounts/a1/transactions                        | http://localhost:8080/accounts/a1/transactions                        |
+| Swagger UI                     | https://anzwholesale.learnerdev.com/swagger-ui/#/                                   | http://localhost:8080/swagger-ui/#/                                   |
+| Swagger JSON spec              | https://anzwholesale.learnerdev.com/v2/api-docs                                     | http://localhost:8080/v2/api-docs                                     |
+| Accounts with page options     | https://anzwholesale.learnerdev.com/users/1/accounts?page=1&size=2                  | http://localhost:8080/users/1/accounts?page=1&size=2                  |
+| Transactions with page options | https://anzwholesale.learnerdev.com/accounts/a1/transactions?page=1&size=5          | http://localhost:8080/accounts/a1/transactions?page=1&size=5          |
+| Transaction type filter        | https://anzwholesale.learnerdev.com/accounts/a1/transactions?transactionType=Credit | http://localhost:8080/accounts/a1/transactions?transactionType=Credit |
 
-## AWS Deployment steps using aws-cli, docker and mvn TODO TODO Delete AWS account number
-1. `aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin 457259096235.dkr.ecr.ap-southeast-2.amazonaws.com`
-2. `./mvnw package`
-3. `docker build -t wholesale-engineering-demo .`
-4. `docker tag wholesale-engineering-demo:latest 457259096235.dkr.ecr.ap-southeast-2.amazonaws.com/wholesale-engineering-demo:latest`
-5. `docker push 457259096235.dkr.ecr.ap-southeast-2.amazonaws.com/wholesale-engineering-demo:latest`
-6. `aws ecs update-service --cluster anz-wholesale-demo --service backend --force-new-deployment`
+## AWS Deployment steps using aws-cli, docker and mvn
+The steps are documented here just to showcase my skills in AWS and need not be performed to access direct URLs mentioned above.
+1. Get AWS ECR credentials `aws ecr get-login-password --region ap-southeast-2 | docker login --username AWS --password-stdin ${AWSAccountNumber}.dkr.ecr.ap-southeast-2.amazonaws.com`
+2. Package the application `./mvnw package`
+3. Build `docker build -t wholesale-engineering-demo .`
+4. Tag `docker tag wholesale-engineering-demo:latest ${AWSAccountNumber}.dkr.ecr.ap-southeast-2.amazonaws.com/wholesale-engineering-demo:latest`
+5. Push image to ECR `docker push ${AWSAccountNumber}.dkr.ecr.ap-southeast-2.amazonaws.com/wholesale-engineering-demo:latest`
+6. Update service to spin up 1 task `aws ecs update-service --cluster anz-wholesale-demo --service backend --force-new-deployment --desired-count 1`
+7. Update service to ramp down to 0 task `aws ecs update-service --cluster anz-wholesale-demo --service backend --force-new-deployment --desired-count 0`
 
-TODO
-1. Check github link is updated in ppt
-   1. If change in ppt update screenshot
-2. Check all links in ppt and in readme.md
-3. Remove account number if keeping aws deployment steps in readme file
-4. Check global TODOs for any missing things
 
